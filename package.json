@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "async": "^1.4.2",
+    "coinbase": "^1.0.4",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "event-stream": "^3.3.1",
