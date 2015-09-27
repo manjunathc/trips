@@ -1,6 +1,6 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
-var async = require('async');
+
 
 var app = module.exports = loopback();
 
