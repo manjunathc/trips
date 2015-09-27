@@ -6,10 +6,7 @@ var app = module.exports = loopback();
 
 app.start = function() {
   // start the web server
-  return app.listen(function() {
-    app.emit('started');
-    console.log('Web server listening at: %s', app.get('url'));
-  });
+  return app.listen(process.env.PORT || 5000);
 };
 
 // Bootstrap the application, configure models, datasources and middleware.
