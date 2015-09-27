@@ -1,12 +1,6 @@
 module.exports = function(Bitcoins) {
-
-  var async = require('async');
   var coinbase = require('coinbase');
-
-
-
-
-  Bitcoins.getCoins = function(vehicle_vin,btc_amount,notes,cb) {
+  Bitcoins.getCoins = function(vehicle_vin,to_public_address,btc_amount,notes,cb) {
 
     var client = new coinbase.Client({
       'apiKey': 'JtqREi3ZJs0bZ9Fa',
@@ -16,11 +10,11 @@ module.exports = function(Bitcoins) {
 
     var Account   = require('coinbase').model.Account;
     var myBtcAcct = new Account(client, {'id': '55f61d82b0e9d646fb000115'});
-
+    //var address = "moN5yVaCq4CVsFiQmqrcsdLZKtdHXuwjmi";
     var args = {
-      "to": "moN5yVaCq4CVsFiQmqrcsdLZKtdHXuwjmi",
-      "amount": "0.035",
-      "notes": "First Car Transaction"
+      "to": to_public_address,
+      "amount": btc_amount,
+      "notes": notes
     };
 
       myBtcAcct.sendMoney(args, function(err, txn) {
@@ -38,6 +32,7 @@ module.exports = function(Bitcoins) {
       {
         accepts: [
           {arg: 'vehicle_vin', type: 'string'},
+          {arg: 'to_public_address', type: 'string'},
           {arg: 'btc_amount', type: 'string'},
           {arg: 'notes', type: 'string'}
         ],
