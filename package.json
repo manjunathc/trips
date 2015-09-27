@@ -18,6 +18,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-datasource-juggler": "^2.39.0",
     "moment": "^2.10.6",
+    "request": "^2.64.0",
     "serve-favicon": "^2.0.1"
   },
   "optionalDependencies": {
